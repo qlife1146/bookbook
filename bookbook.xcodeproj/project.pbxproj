@@ -6,27 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXContainerItemProxy section */
-		8108843D2DFAB3D200DBD7C2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8108841E2DFAB3D000DBD7C2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 810884252DFAB3D000DBD7C2;
-			remoteInfo = bookbook;
-		};
-		810884472DFAB3D200DBD7C2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8108841E2DFAB3D000DBD7C2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 810884252DFAB3D000DBD7C2;
-			remoteInfo = bookbook;
-		};
-/* End PBXContainerItemProxy section */
+/* Begin PBXBuildFile section */
+		810884742DFAC0A800DBD7C2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 810884732DFAC0A800DBD7C2 /* SnapKit */; };
+/* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		810884262DFAB3D000DBD7C2 /* bookbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bookbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8108843C2DFAB3D200DBD7C2 /* bookbookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bookbookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		810884462DFAB3D200DBD7C2 /* bookbookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bookbookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -48,16 +33,6 @@
 			path = bookbook;
 			sourceTree = "<group>";
 		};
-		8108843F2DFAB3D200DBD7C2 /* bookbookTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = bookbookTests;
-			sourceTree = "<group>";
-		};
-		810884492DFAB3D200DBD7C2 /* bookbookUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = bookbookUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,20 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		810884392DFAB3D200DBD7C2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		810884432DFAB3D200DBD7C2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				810884742DFAC0A800DBD7C2 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,8 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				810884282DFAB3D000DBD7C2 /* bookbook */,
-				8108843F2DFAB3D200DBD7C2 /* bookbookTests */,
-				810884492DFAB3D200DBD7C2 /* bookbookUITests */,
 				810884272DFAB3D000DBD7C2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,8 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				810884262DFAB3D000DBD7C2 /* bookbook.app */,
-				8108843C2DFAB3D200DBD7C2 /* bookbookTests.xctest */,
-				810884462DFAB3D200DBD7C2 /* bookbookUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,56 +83,11 @@
 			);
 			name = bookbook;
 			packageProductDependencies = (
+				810884732DFAC0A800DBD7C2 /* SnapKit */,
 			);
 			productName = bookbook;
 			productReference = 810884262DFAB3D000DBD7C2 /* bookbook.app */;
 			productType = "com.apple.product-type.application";
-		};
-		8108843B2DFAB3D200DBD7C2 /* bookbookTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 810884542DFAB3D200DBD7C2 /* Build configuration list for PBXNativeTarget "bookbookTests" */;
-			buildPhases = (
-				810884382DFAB3D200DBD7C2 /* Sources */,
-				810884392DFAB3D200DBD7C2 /* Frameworks */,
-				8108843A2DFAB3D200DBD7C2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8108843E2DFAB3D200DBD7C2 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				8108843F2DFAB3D200DBD7C2 /* bookbookTests */,
-			);
-			name = bookbookTests;
-			packageProductDependencies = (
-			);
-			productName = bookbookTests;
-			productReference = 8108843C2DFAB3D200DBD7C2 /* bookbookTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		810884452DFAB3D200DBD7C2 /* bookbookUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 810884572DFAB3D200DBD7C2 /* Build configuration list for PBXNativeTarget "bookbookUITests" */;
-			buildPhases = (
-				810884422DFAB3D200DBD7C2 /* Sources */,
-				810884432DFAB3D200DBD7C2 /* Frameworks */,
-				810884442DFAB3D200DBD7C2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				810884482DFAB3D200DBD7C2 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				810884492DFAB3D200DBD7C2 /* bookbookUITests */,
-			);
-			name = bookbookUITests;
-			packageProductDependencies = (
-			);
-			productName = bookbookUITests;
-			productReference = 810884462DFAB3D200DBD7C2 /* bookbookUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -189,14 +102,6 @@
 					810884252DFAB3D000DBD7C2 = {
 						CreatedOnToolsVersion = 16.4;
 					};
-					8108843B2DFAB3D200DBD7C2 = {
-						CreatedOnToolsVersion = 16.4;
-						TestTargetID = 810884252DFAB3D000DBD7C2;
-					};
-					810884452DFAB3D200DBD7C2 = {
-						CreatedOnToolsVersion = 16.4;
-						TestTargetID = 810884252DFAB3D000DBD7C2;
-					};
 				};
 			};
 			buildConfigurationList = 810884212DFAB3D000DBD7C2 /* Build configuration list for PBXProject "bookbook" */;
@@ -208,34 +113,21 @@
 			);
 			mainGroup = 8108841D2DFAB3D000DBD7C2;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				810884722DFAC0A800DBD7C2 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 810884272DFAB3D000DBD7C2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				810884252DFAB3D000DBD7C2 /* bookbook */,
-				8108843B2DFAB3D200DBD7C2 /* bookbookTests */,
-				810884452DFAB3D200DBD7C2 /* bookbookUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		810884242DFAB3D000DBD7C2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8108843A2DFAB3D200DBD7C2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		810884442DFAB3D200DBD7C2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -252,34 +144,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		810884382DFAB3D200DBD7C2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		810884422DFAB3D200DBD7C2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		8108843E2DFAB3D200DBD7C2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 810884252DFAB3D000DBD7C2 /* bookbook */;
-			targetProxy = 8108843D2DFAB3D200DBD7C2 /* PBXContainerItemProxy */;
-		};
-		810884482DFAB3D200DBD7C2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 810884252DFAB3D000DBD7C2 /* bookbook */;
-			targetProxy = 810884472DFAB3D200DBD7C2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		810884502DFAB3D200DBD7C2 /* Debug */ = {
@@ -292,21 +157,26 @@
 				DEVELOPMENT_TEAM = 6DA7CAGY3R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = bookbook/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BookBook;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.luca.bookbook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucapark.bookbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -320,21 +190,26 @@
 				DEVELOPMENT_TEAM = 6DA7CAGY3R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = bookbook/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BookBook;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.luca.bookbook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lucapark.bookbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -459,78 +334,6 @@
 			};
 			name = Release;
 		};
-		810884552DFAB3D200DBD7C2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6DA7CAGY3R;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.luca.bookbookTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bookbook.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/bookbook";
-			};
-			name = Debug;
-		};
-		810884562DFAB3D200DBD7C2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6DA7CAGY3R;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.luca.bookbookTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bookbook.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/bookbook";
-			};
-			name = Release;
-		};
-		810884582DFAB3D200DBD7C2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6DA7CAGY3R;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.luca.bookbookUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = bookbook;
-			};
-			name = Debug;
-		};
-		810884592DFAB3D200DBD7C2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6DA7CAGY3R;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.luca.bookbookUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = bookbook;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -552,25 +355,26 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		810884542DFAB3D200DBD7C2 /* Build configuration list for PBXNativeTarget "bookbookTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				810884552DFAB3D200DBD7C2 /* Debug */,
-				810884562DFAB3D200DBD7C2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		810884572DFAB3D200DBD7C2 /* Build configuration list for PBXNativeTarget "bookbookUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				810884582DFAB3D200DBD7C2 /* Debug */,
-				810884592DFAB3D200DBD7C2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		810884722DFAC0A800DBD7C2 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		810884732DFAC0A800DBD7C2 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 810884722DFAC0A800DBD7C2 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8108841E2DFAB3D000DBD7C2 /* Project object */;
 }
