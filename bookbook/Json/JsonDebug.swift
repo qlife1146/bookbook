@@ -1,10 +1,3 @@
-//
-//  JsonDebug.swift
-//  bookbook
-//
-//  Created by Luca Park on 6/12/25.
-//
-
 import UIKit
 
 func jsonDebug() {
