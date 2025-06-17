@@ -1,83 +1,66 @@
-//
-//  ViewController.swift
-//  bookbook
-//
-//  Created by Luca Park on 6/12/25.
-//
-
 import SnapKit
 import UIKit
 
 class ViewController: UIViewController {
-    let testLabel = UILabel()
-    let bookTitleLabel = UILabel()
-    let seriesButton = UIButton()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        lv1View()
-        //                test()
-        //                jsonDebug()
+  //TopView
+  var books: [Book] = []
+  var index: Int = 0
+
+  let bookTitleLabel = UILabel()
+  let seriesButton = UIButton()
+
+  //MidView
+  //TitleStack = 스택 그 자체
+  let bookImageTitleStack = UIStackView()
+  let bookInfoTitleStack = UIStackView()
+  let bookAuthorTitleStack = UIStackView()
+  let bookReleasedTitleStack = UIStackView()
+  let bookPagesTitleStack = UIStackView()
+
+  let bookImage = UIImageView()
+  let bookTitle = UILabel()
+
+  //Stack = 저자명, 발매일 등 타이틀
+  //x = jk롤링, 1997년 등 정보
+  let bookStackTitle = UILabel()
+  let bookAuthorTitle = UILabel()
+  let bookAuthor = UILabel()
+  let bookReleaseTitle = UILabel()
+  let bookRelease = UILabel()
+  let bookPagesTitle = UILabel()
+  let bookPages = UILabel()
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    view.backgroundColor = .systemBackground
+
+    viewBooks()
+  }
+
+  func loadBooks(completion: @escaping ([Book]) -> Void) {
+    DataService().loadBooks { result in
+      switch result {
+      case let .success(books):
+        completion(books)
+      case let .failure(error):
+        print("데이터 불러오기 실패: \(error)")
+      }
     }
-    
-    func test() {
-        testLabel.text = "gsdogdsoghodfigfd"
-        testLabel.textColor = .red
-        
-        view.addSubview(testLabel)
-        testLabel.snp.makeConstraints {
-            $0.width.equalTo(80)
-            $0.height.equalTo(40)
-            $0.centerX.equalToSuperview()
-            $0.centerY.equalToSuperview()
-        }
+  }
+
+  func viewBooks() {
+    loadBooks { [weak self] loadedBooks in
+      guard let self = self else { return }
+      self.books = loadedBooks
+
+      // index에 해당하는 책으로 topView 구성
+      if index < self.books.count {
+        let selectedBook = self.books[index]
+        self.topView(book: selectedBook)
+        self.midView(book: selectedBook)
+      } else {
+        print("index 범위 초과")
+      }
     }
-    
-    func lv1View() {
-        DataService().loadBooks { result in
-            switch result {
-            case .success:
-                DataService().loadBooks { [self] result in
-                    switch result {
-                    case let .success(books):
-                        let bookTitleLabel = self.bookTitleLabel
-                        let seriesButton = self.seriesButton
-                        
-                        bookTitleLabel.text = books[0].title
-                        bookTitleLabel.textAlignment = .center
-                        bookTitleLabel.font = UIFont.boldSystemFont(ofSize: 24)
-                        bookTitleLabel.numberOfLines = 2
-                        
-                        seriesButton.setTitle("1", for: .normal)
-                        seriesButton.titleLabel?.textAlignment = .center
-                        seriesButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-                        seriesButton.backgroundColor = .systemBlue
-                        
-                        [bookTitleLabel, seriesButton].forEach({
-                            view.addSubview($0)
-                        })
-                        bookTitleLabel.snp.makeConstraints {
-                            $0.top.equalTo(view.safeAreaLayoutGuide).offset(10)
-                            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
-                        }
-                        seriesButton.snp.makeConstraints({
-                            $0.top.equalTo(bookTitleLabel.snp.bottom).offset(16)
-                            $0.centerX.equalToSuperview()
-                            $0.height.equalTo(seriesButton.snp.width)
-                        })
-                        seriesButton.layoutIfNeeded()       // 버튼 레이아웃 강제 계산
-                        seriesButton.layer.cornerRadius = seriesButton.bounds.width / 2
-                        seriesButton.clipsToBounds = true   // 경계 바깥 자르기
-                        
-                    case let .failure(error):
-                        print("❌ 데이터 불러오기 실패: \(error)")
-                    }
-                }
-            case let .failure(error):
-                print("❌ 데이터 불러오기 실패: \(error)")
-            }
-        }
-    }
-    
+  }
 }
