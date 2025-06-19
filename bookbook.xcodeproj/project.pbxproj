@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		810884742DFAC0A800DBD7C2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 810884732DFAC0A800DBD7C2 /* SnapKit */; };
+		81B0F5712E011518006F9433 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 81B0F5702E011518006F9433 /* Then */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				810884742DFAC0A800DBD7C2 /* SnapKit in Frameworks */,
+				81B0F5712E011518006F9433 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +86,7 @@
 			name = bookbook;
 			packageProductDependencies = (
 				810884732DFAC0A800DBD7C2 /* SnapKit */,
+				81B0F5702E011518006F9433 /* Then */,
 			);
 			productName = bookbook;
 			productReference = 810884262DFAB3D000DBD7C2 /* bookbook.app */;
@@ -115,6 +118,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				810884722DFAC0A800DBD7C2 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				81B0F56F2E011518006F9433 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 810884272DFAB3D000DBD7C2 /* Products */;
@@ -366,6 +370,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		81B0F56F2E011518006F9433 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -373,6 +385,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 810884722DFAC0A800DBD7C2 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		81B0F5702E011518006F9433 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 81B0F56F2E011518006F9433 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
