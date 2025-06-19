@@ -10,8 +10,9 @@ func jsonDebug() {
                 print("  챕터 수: \(book.chapters.count)")
             }
         case let .failure(error):
-          // TODO: Alert
-            print("❌ 데이터 불러오기 실패: \(error)")
+          let alert = UIAlertController(title: "\(error)", message: "데이터 로드 실패", preferredStyle: .alert)
+          let ok = UIAlertAction(title: "확인", style: .default)
+          alert.addAction(ok)
         }
     }
 }

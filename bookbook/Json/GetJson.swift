@@ -18,14 +18,14 @@ class DataService {
             completion(.failure(DataError.fileNotFound))
             return
         }
-
+      
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: path))
             let bookResponse = try JSONDecoder().decode(BookResponse.self, from: data)
             let books = bookResponse.data.map { $0.attributes }
             completion(.success(books))
         } catch {
-            print("🚨 JSON 파싱 에러 : \(error)")
+            print("JSON 파싱 에러 : \(error)")
             completion(.failure(DataError.parsingFailed))
         }
     }

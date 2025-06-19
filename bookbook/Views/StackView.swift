@@ -1,110 +1,104 @@
 import SnapKit
 import UIKit
 
-//bookImageStack.addArrangedSubview($0)
+// bookImageStack.addArrangedSubview($0)
 
 extension ViewController {
-  func stackView(book: Book) {
+  func stackView(book _: Book) {
     // 저자 스택(authorStack)
-    [authorTitle, author].forEach({
-      authorStack.addArrangedSubview($0)
-    })
+    for item in [authorTitle, author] {
+      authorStack.addArrangedSubview(item)
+    }
 
     // 발매일 스택(releaseStack)
-    [releaseTitle, release].forEach({
-      releaseStack.addArrangedSubview($0)
-    })
+    for item in [releaseTitle, release] {
+      releaseStack.addArrangedSubview(item)
+    }
 
     // 페이지 스택(pageStack)
-    [pagesTitle, pages].forEach({
-      pagesStack.addArrangedSubview($0)
-    })
+    for item in [pagesTitle, pages] {
+      pagesStack.addArrangedSubview(item)
+    }
 
     // 제목+저자+발매일+페이지 스택(titleInfoStack)
-    [bookTitle, authorStack, releaseStack, pagesStack].forEach({
-      titleInfoStack.addArrangedSubview($0)
-    })
-
-    // 사진+(제목+저자+발매일+페이지) 스택(bookImageTitleInfoStack)
-    [bookImage, titleInfoStack].forEach({
-      bookImageTitleInfoStack.addArrangedSubview($0)
-    })
-
-    // 추천사 스택(dedicationStack)
-    [dedicationTitle, dedication].forEach({
-      dedicationStack.addArrangedSubview($0)
-    })
-
-    // 줄거리 스택(summaryStack)
-    [summaryTitle, summary].forEach({
-      summaryStack.addArrangedSubview($0)
-    })
-
-    // (추천사+줄거리) 스택(dediSumStack)
-    [dedicationStack, summaryStack].forEach({
-      dediSumStack.addArrangedSubview($0)
-    })
-
-    // 챕터 스택
-    [chapterTitle, chapter].forEach({
-      chapterStack.addArrangedSubview($0)
-    })
-
-    // MARK: 레이아웃
-    [authorStack, releaseStack, pagesStack].forEach({
-      $0.axis = .horizontal
-    })
-    
-    [bookImageTitleInfoStack, dediSumStack, chapterStack].forEach({
-      textContent.addSubview($0)
-    })
-
+    for item in [bookTitle, authorStack, releaseStack, pagesStack] {
+      titleInfoStack.addArrangedSubview(item)
+    }
     titleInfoStack.axis = .vertical
     titleInfoStack.spacing = 8
-    
+
+    // 사진+(제목+저자+발매일+페이지) 스택(bookImageTitleInfoStack)
+    for item in [bookImage, titleInfoStack] {
+      bookImageTitleInfoStack.addArrangedSubview(item)
+    }
     bookImageTitleInfoStack.axis = .horizontal
     bookImageTitleInfoStack.spacing = 16
-    
+
+    // 추천사 스택(dedicationStack)
+    for item in [dedicationTitle, dedication] {
+      dedicationStack.addArrangedSubview(item)
+    }
     dedicationStack.axis = .vertical
     dedicationStack.spacing = 8
 
+    // 줄거리 스택(summaryStack)
+    for item in [summaryTitle, summary] {
+      summaryStack.addArrangedSubview(item)
+    }
     summaryStack.axis = .vertical
     summaryStack.spacing = 8
 
+    // (추천사+줄거리) 스택(dediSumStack)
+    for item in [dedicationStack, summaryStack] {
+      dediSumStack.addArrangedSubview(item)
+    }
     dediSumStack.axis = .vertical
+    dediSumStack.spacing = 24
 
+    // 챕터 스택
+    for item in [chapterTitle, chapter] {
+      chapterStack.addArrangedSubview(item)
+    }
     chapterStack.axis = .vertical
     chapterStack.spacing = 8
 
+    // MARK: 레이아웃
+
+    for item in [authorStack, releaseStack, pagesStack] {
+      item.axis = .horizontal
+      item.spacing = 8
+    }
+
+    for item in [bookImageTitleInfoStack, dediSumStack, chapterStack] {
+      textContent.addSubview(item)
+    }
+
     // MARK: SnapKit 레이아웃
-    [authorStack, releaseStack, pagesStack].forEach({
-      $0.spacing = 8
-    })
-    
+
     let titleLabels = [authorTitle, releaseTitle, pagesTitle]
     let valueLabels = [author, release, pages]
-    titleLabels.forEach {
-      $0.setContentHuggingPriority(.required, for: .horizontal)
-      $0.setContentCompressionResistancePriority(.required, for: .horizontal)
+    for titleLabel in titleLabels {
+      titleLabel.setContentHuggingPriority(.required, for: .horizontal)
+      titleLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
     }
-    valueLabels.forEach {
-      $0.setContentHuggingPriority(.defaultLow, for: .horizontal)
-      $0.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+    for valueLabel in valueLabels {
+      valueLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
+      valueLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }
-    
+
     bookImageTitleInfoStack.snp.makeConstraints {
-      $0.top.equalToSuperview()
-      $0.leading.trailing.equalToSuperview()
+      $0.top.equalToSuperview().offset(10)
+      $0.leading.trailing.equalTo(textContent.safeAreaLayoutGuide).inset(20)
     }
-    
+
     dediSumStack.snp.makeConstraints {
-      $0.top.equalTo(bookImageTitleInfoStack.snp.bottom)
-      $0.leading.trailing.equalToSuperview()
+      $0.top.equalTo(bookImageTitleInfoStack.snp.bottom).offset(24)
+      $0.leading.trailing.equalToSuperview().inset(20)
     }
-    
+
     chapterStack.snp.makeConstraints {
-      $0.top.equalTo(dediSumStack.snp.bottom)
-      $0.leading.trailing.equalToSuperview()
+      $0.top.equalTo(dediSumStack.snp.bottom).offset(24)
+      $0.leading.trailing.equalToSuperview().inset(20)
       $0.bottom.equalToSuperview()
     }
   }

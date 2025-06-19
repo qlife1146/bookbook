@@ -3,7 +3,7 @@ import UIKit
 
 // contentLayoutGuide, frameLayoutGuide
 extension ViewController {
-  func textScrollView(book: Book) {
+  func textScrollView(book _: Book) {
     textScroll.showsHorizontalScrollIndicator = false
     textScroll.showsVerticalScrollIndicator = false
 
