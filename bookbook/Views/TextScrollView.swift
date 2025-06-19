@@ -21,8 +21,6 @@ extension ViewController {
     textContent.snp.makeConstraints {
       $0.top.bottom.equalTo(textScroll.contentLayoutGuide)
       $0.leading.trailing.equalTo(textScroll.frameLayoutGuide)
-//      $0.edges.equalTo(textScroll.contentLayoutGuide)
-//      $0.width.equalTo(textScroll.frameLayoutGuide)
     }
   }
 }
