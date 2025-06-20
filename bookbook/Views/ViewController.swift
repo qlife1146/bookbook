@@ -7,10 +7,16 @@ class ViewController: UIViewController {
   // MARK: titleView
 
   var books: [Book] = []
-  var index: Int = 0
+  var index: Int = 0 {
+    didSet {
+      updateData()
+    }
+  }
 
+  let seriesStack: UIStackView = .init()
   let titleLabel: UILabel = .init()
   let seriesButton: UIButton = .init()
+  let seriesButtons: UIStackView = .init()
 
   // MARK: infoView
 
@@ -25,11 +31,9 @@ class ViewController: UIViewController {
   /// 사진+(제목+(저자+발매일+페이지)) 스택
   let bookImageTitleInfoStack: UIStackView = .init()
 
-  let bookTitle: UILabel = .init()
+  let bookInfoTitle: UILabel = .init()
   let bookImage: UIImageView = .init()
 
-  // Stack = 저자명, 발매일 등 타이틀
-  // x = jk롤링, 1997년 등 정보
   let bookStackTitle: UILabel = .init()
   let authorTitle: UILabel = .init()
   let author: UILabel = .init()
@@ -108,20 +112,23 @@ class ViewController: UIViewController {
       }
     }
   }
-}
 
-import SwiftUI
-
-// MARK: - ViewControllerPreview
-
-struct ViewControllerPreview: UIViewControllerRepresentable {
-  func makeUIViewController(context _: Context) -> ViewController {
-    return ViewController()
+  func updateData() {
+    titleLabel.text = books[index].title
+    updateSeriesButtonColors()
+    bookImage.image = UIImage(named: "harrypotter\(index + 1)")
+    author.text = books[index].author
+    release.text = books[index].releaseDate
+    pages.text = "\(books[index].pages)"
+    dedication.text = books[index].dedication
+    summary.text = books[index].summary
+    chaptersSet(index: index)
   }
 
-  func updateUIViewController(_: ViewController, context _: Context) {}
-}
-
-#Preview {
-  ViewControllerPreview()
+  @objc func touchBookBtn(_ sender: UIButton) {
+    let selected = sender.tag
+    index = selected
+//    print("\(index + 1), Button was tapped!")
+//    print(selected, index)
+  }
 }
