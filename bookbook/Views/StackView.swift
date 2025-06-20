@@ -51,6 +51,10 @@ extension ViewController {
     bookImageTitleInfoStack.axis = .horizontal
     bookImageTitleInfoStack.spacing = 16
 
+    for item in [bookImageTitleInfoStack, dediSumStack, chapterStack] {
+      textContent.addSubview(item)
+    }
+    
     bookImageTitleInfoStack.snp.makeConstraints {
       $0.top.equalToSuperview().offset(10)
       $0.leading.trailing.equalTo(textContent.safeAreaLayoutGuide).inset(20)
@@ -100,8 +104,6 @@ extension ViewController {
     
     // 총 스택
 
-    for item in [bookImageTitleInfoStack, dediSumStack, chapterStack] {
-      textContent.addSubview(item)
-    }
+
   }
 }
