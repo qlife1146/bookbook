@@ -4,118 +4,77 @@ import Then
 import UIKit
 
 extension ViewController {
-  func infoView(book: Book) {
+  func infoView(book _: Book) {
     let bookImage = self.bookImage
     let bookTitle = self.bookTitle
     let authorTitle = self.authorTitle
     let author = self.author
-
     let releaseTitle = self.releaseTitle
     let release = self.release
-
     let pagesTitle = self.pagesTitle
     let pages = self.pages
 
-    //MARK: Data setting
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+
+    // MARK: Data setting
+
+    func date(at index: Int) -> String {
+      if let date = dateFormatter.date(from: books[index].releaseDate) {
+        return date.formatted(date: .long, time: .omitted)
+      } else {
+        return "Format Error"
+      }
+    }
+
+    // MARK: 책 표지 이미지 속성
+
     bookImage.image = UIImage(named: "harrypotter\(index + 1)")
+    bookImage.contentMode = .scaleAspectFit
+    bookImage.snp.makeConstraints {
+      $0.width.equalTo(100)
+      $0.height.equalTo(bookImage.snp.width).multipliedBy(1.5)
+    }
+
+    // MARK: 책 제목 속성
 
     bookTitle.text = books[index].title
-
-    authorTitle.text = "Author"
-
-    author.text = books[index].author
-
-    releaseTitle.text = "Released"
-    release.text = books[index].releaseDate
-
-    pagesTitle.text = "Pages"
-    pages.text = "\(books[index].pages)"
-
-    //MARK: Attribute
-    //        bookImage.translatesAutoresizingMaskIntoConstraints = false
-    //        bookImage.frame.size.width = 100
-    bookImage.contentMode = .scaleAspectFit
-    //    bookImage.clipsToBounds = true
-    //    bookImage.backgroundColor = .red
-
     bookTitle.font = UIFont.systemFont(ofSize: 20, weight: .bold)
     bookTitle.numberOfLines = 2
 
+    // MARK: 저자 속성
+
+    // 타이틀 속성
+    authorTitle.text = "Author"
     authorTitle.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+    // 저자 속성
+    author.text = books[index].author
+    author.font = UIFont.systemFont(ofSize: 18)
+    author.textColor = .darkGray
 
+    // MARK: 출간일 속성
+
+    // 타이틀 속성
+    releaseTitle.text = "Released"
     releaseTitle.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+    // 출간일 속성
+    release.text = date(at: index)
+    release.font = UIFont.systemFont(ofSize: 14)
+    release.textColor = .gray
 
+    // MARK: 페이지 속성
+
+    // 타이틀 속성
+    pagesTitle.text = "Pages"
     pagesTitle.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+    // 페이지 수 속성
+    pages.text = "\(books[index].pages)"
+    pages.font = UIFont.systemFont(ofSize: 14)
+    pages.textColor = .gray
 
-    [author, release, pages].forEach({
-      $0.font = UIFont.systemFont(ofSize: 14)
-      $0.textColor = .gray
-    })
-
-    // MARK: Stack Layout
-    // 작가 가로 스택
-    let authorStack = UIStackView(arrangedSubviews: [authorTitle, author])
-    // 발매일 가로 스택
-    let releasedStack = UIStackView(arrangedSubviews: [
-      releaseTitle, release,
-    ])
-    // 쪽 수 가로 스택
-    let pagesStack = UIStackView(arrangedSubviews: [pagesTitle, pages])
-
-    [authorStack, releasedStack, pagesStack].forEach({
-      $0.axis = .horizontal
-      //      $0.distribution = .fillProportionally
-      $0.alignment = .fill
-    })
-
-    // 전체 중 오른쪽 스택
-    let infoStack = UIStackView(arrangedSubviews: [
-      bookTitle, authorStack, releasedStack, pagesStack,
-    ]).then {
-      $0.axis = .vertical
-    }
-
-    // 전체 스택
-    [bookImage, infoStack].forEach({
-      bookImageStack.addArrangedSubview($0)
-    })
-    bookImageStack.axis = .horizontal
-    bookImageStack.spacing = 10
-
-    //------------------------
-    //|  book |   book info  |
-    //| image |--------------|
-    //| stack | title | info |
-    //------------------------
-
-    // MARK: SnapKit Layout
-    view.addSubview(bookImageStack)
-    bookImage.snp.makeConstraints({
-      $0.width.equalTo(100)
-      $0.height.equalTo(bookImage.snp.width).multipliedBy(1.5)
-    })
-    bookImageStack.snp.makeConstraints {
-      $0.top.equalTo(seriesButton.snp.bottom).offset(20)
-      $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(5)
-    }
-
-    //    let title = [bookAuthorTitle, bookReleaseTitle, bookPages]
-    //    let info = [bookAuthor, bookRelease, bookPages]
-    //    zip(title, info).forEach{a, b in
-    //      a.snp.makeConstraints{
-    //        $0.trailing.equalTo(b.snp.leading).offset(-8)
-    //      }
-    //    }
-    //    bookAuthor.setContentCompressionResistancePriority(.init(rawValue: 250), for: .horizontal)
-
-    authorTitle.snp.makeConstraints({
-      $0.trailing.equalTo(author.snp.leading).offset(-8)
-    })
-    releaseTitle.snp.makeConstraints({
-      $0.trailing.equalTo(release.snp.leading).offset(-8)
-    })
-    pagesTitle.snp.makeConstraints({
-      $0.trailing.equalTo(pages.snp.leading).offset(-8)
-    })
+//    for item in [release, pages] {
+//      item.font = UIFont.systemFont(ofSize: 14)
+//      item.textColor = .gray
+//    }
   }
 }

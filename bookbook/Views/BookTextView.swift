@@ -4,53 +4,42 @@ import Then
 import UIKit
 
 extension ViewController {
-  func textView(book: Book) {
+  func textView(book _: Book) {
     let dedicationTitle = self.dedicationTitle
     let dedication = self.dedication
     let summaryTitle = self.summaryTitle
     let summary = self.summary
 
-    [dedicationTitle, summaryTitle].forEach({
-      $0.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-    })
+    // MARK: Dedication 속성
+
+    // 타이틀 속성
     dedicationTitle.text = "Dedication"
-    summaryTitle.text = "Summary"
-
-    [dedication, summary].forEach({
-      $0.font = UIFont.systemFont(ofSize: 14)
-      $0.textColor = .darkGray
-      $0.numberOfLines = 0
-    })
+    dedicationTitle.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+    // 헌정사 내용 속성
     dedication.text = books[index].dedication
+    dedication.font = UIFont.systemFont(ofSize: 14)
+    dedication.textColor = .darkGray
+    dedication.numberOfLines = 0
+
+    // MARK: Summary 속성
+
+    // 타이틀 속성
+    summaryTitle.text = "Summary"
+    summaryTitle.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+    // 요약 속성
     summary.text = books[index].summary
+    summary.font = UIFont.systemFont(ofSize: 14)
+    summary.textColor = .darkGray
+    summary.numberOfLines = 0
 
-    //    let infoStack = UIStackView(arrangedSubviews: [
-    //      bookTitle, authorStack, releasedStack, pagesStack,
-    //    ]).then {
-    //      $0.axis = .vertical
-    //    }
-
-    let dedicationStack = UIStackView(arrangedSubviews: [dedicationTitle, dedication]).then {
-      $0.axis = .vertical
-      $0.spacing = 8
-    }
-    let summaryStack = UIStackView(arrangedSubviews: [summaryTitle, summary]).then {
-      $0.axis = .vertical
-      $0.spacing = 8
-    }
-
-    [dedicationStack, summaryStack].forEach({
-      view.addSubview($0)
-    })
-
-    dedicationStack.snp.makeConstraints({
-      $0.top.equalTo(bookImageStack.snp.bottom).offset(24)
-      $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
-    })
-
-    summaryStack.snp.makeConstraints({
-      $0.top.equalTo(dedicationStack.snp.bottom).offset(24)
-      $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
-    })
+//    for item in [dedicationTitle, summaryTitle] {
+//      item.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+//    }
+//
+//    for item in [dedication, summary] {
+//      item.font = UIFont.systemFont(ofSize: 14)
+//      item.textColor = .darkGray
+//      item.numberOfLines = 0
+//    }
   }
 }
