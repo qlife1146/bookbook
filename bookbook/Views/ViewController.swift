@@ -54,7 +54,7 @@ class ViewController: UIViewController {
   // MARK: chapterView
 
   let chapterTitle: UILabel = .init()
-  let chapter: UILabel = .init()
+  let chapters: UIStackView = .init()
 
   let chapterStack: UIStackView = .init()
 
