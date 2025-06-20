@@ -6,7 +6,7 @@ import UIKit
 extension ViewController {
   func infoView(book _: Book) {
     let bookImage = self.bookImage
-    let bookTitle = self.bookTitle
+    let bookTitle = self.bookInfoTitle
     let authorTitle = self.authorTitle
     let author = self.author
     let releaseTitle = self.releaseTitle
