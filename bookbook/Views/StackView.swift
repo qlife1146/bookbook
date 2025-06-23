@@ -49,6 +49,7 @@ extension ViewController {
     }
     titleInfoStack.axis = .vertical
     titleInfoStack.spacing = 8
+    titleInfoStack.alignment = .top
 
     // 사진+(제목+저자+발매일+페이지) 스택(bookImageTitleInfoStack)
     for item in [bookImage, titleInfoStack] {
@@ -108,6 +109,11 @@ extension ViewController {
       $0.top.equalTo(bookImageTitleInfoStack.snp.bottom).offset(24)
       $0.leading.trailing.equalTo(textContent.safeAreaLayoutGuide).inset(20)
     }
+    textContent.addSubview(summaryButton)
+    summaryButton.snp.makeConstraints({
+      $0.top.equalTo(dediSumStack.snp.bottom).offset(0)
+      $0.trailing.equalTo(textContent.safeAreaLayoutGuide).inset(20)
+    })
 
     // 챕터 스택(chapterStack)
     for item in [chapterTitle, chapters] {
@@ -119,7 +125,7 @@ extension ViewController {
     chapterStack.spacing = 8
 
     chapterStack.snp.makeConstraints {
-      $0.top.equalTo(dediSumStack.snp.bottom).offset(24)
+      $0.top.equalTo(summaryButton.snp.bottom).offset(24)
       $0.leading.trailing.equalTo(textContent.safeAreaLayoutGuide).inset(20)
       $0.bottom.equalToSuperview()
     }

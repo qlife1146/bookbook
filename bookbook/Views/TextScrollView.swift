@@ -11,7 +11,7 @@ extension ViewController {
     textScroll.addSubview(textContent)
     
     textScroll.snp.makeConstraints {
-      $0.top.equalTo(seriesStack.snp.bottom)
+      $0.top.equalTo(seriesStack.snp.bottom).offset(10)
       $0.leading.trailing.bottom.equalToSuperview()
     }
 
