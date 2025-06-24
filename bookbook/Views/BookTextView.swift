@@ -49,7 +49,6 @@ extension ViewController {
       summaryButton.isHidden = true
       summary.text = summaryText
     }
-    }
 
     summary.font = UIFont.systemFont(ofSize: 14)
     summary.textColor = .darkGray
