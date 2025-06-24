@@ -11,17 +11,21 @@
 
 ## 시연 영상
 - 앱 실행 시연<br>
-![1 (2)](https://github.com/user-attachments/assets/2c03fe66-2672-4075-8da9-94f6ef390779)
+![06231-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/92a63838-9fdd-42ee-bf72-16c959610fee)
 
 
-- [더 보기/접기] 및 마지막으로 본 책 저장 시연(홀수는 접기, 짝수는 더 보기 유지 및 마지막 7권 다시 켜짐)<br>
-![2](https://github.com/user-attachments/assets/ae505cfc-e219-443d-8763-8aef21a04ed5)
+- [더 보기/접기] 유지 및 마지막으로 본 책 저장 시연(1권, 3권 열림 상태 유지 및 마지막 7권 다시 켜짐)<br>
+![06232-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/e9234ee4-fc9a-4479-b2b5-f1968cd8fd71)
 
 
 - 스크롤 시연<br>
-![3](https://github.com/user-attachments/assets/bf970d92-c2aa-4bb6-b843-fbf1cf0ed0ae)
+![06233-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/b814cf76-fd2e-46a9-9bc7-ee59552566bd)
+
+
+- 가로/세로 지원 시연<br>
+![06234-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/9a4c32e6-705b-4763-9f43-87d38cbfe1fd)
 
 
 ## 예외처리
 - 요구사항 중 줄거리 450자 이내는 [더 보기/접기]를 아예 안 보이게 숨김 처리<br>
-![_MConverter eu_0623 (1)](https://github.com/user-attachments/assets/2a0fc474-337a-4970-bed2-db5ccf75f7f9)
+<img width="300" alt="IMG_0957 2" src="https://github.com/user-attachments/assets/714a8091-0397-4224-81ed-35f5e5ca49aa" />
