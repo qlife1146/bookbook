@@ -9,12 +9,9 @@ extension ViewController {
 
     view.addSubview(textScroll)
     textScroll.addSubview(textContent)
-//    [bookImageTitleInfoStack, dediSumStack, chapterStack].forEach({
-//      textContent.addSubview($0)
-//    })
-
+    
     textScroll.snp.makeConstraints {
-      $0.top.equalTo(seriesButton.snp.bottom)
+      $0.top.equalTo(seriesStack.snp.bottom).offset(10)
       $0.leading.trailing.bottom.equalToSuperview()
     }
 

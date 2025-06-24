@@ -4,9 +4,10 @@ import Then
 import UIKit
 
 extension ViewController {
+  // TODO: 열림/닫힘, 권 저장
   func infoView(book _: Book) {
     let bookImage = self.bookImage
-    let bookTitle = self.bookTitle
+    let bookTitle = self.bookInfoTitle
     let authorTitle = self.authorTitle
     let author = self.author
     let releaseTitle = self.releaseTitle
@@ -27,6 +28,8 @@ extension ViewController {
       }
     }
 
+    // TODO: Layouting
+    
     // MARK: 책 표지 이미지 속성
 
     bookImage.image = UIImage(named: "harrypotter\(index + 1)")

@@ -8,7 +8,7 @@ extension ViewController {
     let dedicationTitle = self.dedicationTitle
     let dedication = self.dedication
     let summaryTitle = self.summaryTitle
-    let summary = self.summary
+    let isExpanded = UserDefaults.standard.bool(forKey: isExpandedKey(for: index))
 
     // MARK: Dedication 속성
 
@@ -27,19 +27,46 @@ extension ViewController {
     summaryTitle.text = "Summary"
     summaryTitle.font = UIFont.systemFont(ofSize: 18, weight: .bold)
     // 요약 속성
-    summary.text = books[index].summary
+//    print(books[index].summary.count)
+    summaryUpdate()
+
+    summaryButton.setTitle(isExpanded ? "접기" : "더 보기", for: .normal)
+    summaryButton.setTitleColor(.systemBlue, for: .normal)
+    summaryButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+  }
+
+  func summaryUpdate() {
+    let isExpanded = UserDefaults.standard.bool(forKey: isExpandedKey(for: index))
+    let summaryText = books[index].summary
+
+    if summaryText.count >= 450 {
+      summaryButton.isHidden = false
+
+      summary.text = isExpanded ? summaryText : summaryText.prefix(450) + "..."
+      summaryButton.setTitle(isExpanded ? "접기" : "더 보기", for: .normal)
+
+    } else { // summaryText.count < 450
+      summaryButton.isHidden = true
+      summary.text = summaryText
+    }
+    }
+
     summary.font = UIFont.systemFont(ofSize: 14)
     summary.textColor = .darkGray
     summary.numberOfLines = 0
+  }
 
-//    for item in [dedicationTitle, summaryTitle] {
-//      item.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-//    }
-//
-//    for item in [dedication, summary] {
-//      item.font = UIFont.systemFont(ofSize: 14)
-//      item.textColor = .darkGray
-//      item.numberOfLines = 0
-//    }
+  func summurrayButtonAction() {
+    summaryButton.addTarget(self, action: #selector(summaryButtonTapped), for: .touchUpInside)
+  }
+
+  @objc func summaryButtonTapped() {
+//    print("tapped, \(isExpanded)")
+    let key = isExpandedKey(for: index)
+    let isExpanded = UserDefaults.standard.bool(forKey: key)
+    let newState = !isExpanded
+
+    UserDefaults.standard.set(newState, forKey: key)
+    summaryUpdate()
   }
 }
