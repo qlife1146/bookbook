@@ -49,7 +49,8 @@ extension ViewController {
     }
     titleInfoStack.axis = .vertical
     titleInfoStack.spacing = 8
-    titleInfoStack.alignment = .top
+    titleInfoStack.alignment = .leading
+    titleInfoStack.distribution = .equalSpacing
 
     // 사진+(제목+저자+발매일+페이지) 스택(bookImageTitleInfoStack)
     for item in [bookImage, titleInfoStack] {
